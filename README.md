@@ -343,3 +343,197 @@ Standards are agreed-upon technical rules so that devices from different makers 
 ### 4. APIPA - It stands for Automatic Private IP Addressing.
 
 It’s a feature in Windows (and some other OSes) that automatically assigns an IP address to a device when it can’t get one from a DHCP server.
+
+#### Key Points
+* APIPA = local communication only (no internet).
+
+* Triggered when DHCP fails.
+
+* Useful for small peer-to-peer setups without a DHCP server.
+
+## COMPUTER NETWORKS 
+
+### 1. LAN - It stands for Local Area Network.
+
+It’s a network that connects computers and other devices within a small geographic area, such as a home, school, office, or building.
+
+#### Key Features of LAN
+* Coverage area: Small (a few meters to a few kilometers).
+
+* High speed: Usually 100 Mbps to 10 Gbps or more.
+
+* Ownership: Typically owned, controlled, and maintained by a single person or organization.
+
+* Connection media: Can be wired (Ethernet cables) or wireless (Wi-Fi).
+
+#### Examples
+* Computers connected in an office to share files and printers.
+
+* School computer lab.
+
+### 2. MAN - It stands for Metropolitan Area Network.
+
+It’s a type of computer network that covers a city, large campus, or a group of nearby buildings — bigger than a LAN but smaller than a WAN.
+
+#### Key Features of MAN
+* Coverage area: From a few kilometers to about 50 km.
+
+* Speed: Often in the range of 10 Mbps to 1 Gbps (can be higher with fiber).
+
+* Ownership: May be owned by a single organization, a group of organizations, or a service provider.
+
+* Technology: Often uses fiber optic cables, microwave links, or leased lines.
+
+#### Examples
+* A network connecting all branches of a city’s public library.
+
+* University campuses spread across a city.
+
+### 3. WAN - It  stands for Wide Area Network.
+
+It’s a network that covers a large geographical area, such as a country, continent, or even the whole world — connecting multiple LANs and MANs together. The internet itself is the largest WAN.
+
+#### Key Features of WAN
+* Coverage area: From hundreds of kilometers to worldwide.
+
+* Speed: Varies — typically slower than LAN/MAN (due to distance), but modern WANs with fiber and satellite can still be very fast.
+
+* Ownership: Often owned and managed by multiple organizations or telecom companies.
+
+* Technology: Uses fiber optics, undersea cables, satellites, microwave links, and public telecommunication networks.
+
+#### Examples
+* The Internet.
+
+* Banking networks connecting ATMs worldwide.
+
+## INTER/INTRA NET
+
+### 1. INTERNET - 
+The Internet is a global network of interconnected computers and networks that communicate using the TCP/IP protocol suite. It allows billions of devices worldwide to share information, resources, and services.
+
+#### Key Features
+* Worldwide Access: Connects people and systems across all continents.
+
+* Decentralized: No single owner — it’s managed collectively by ISPs, governments, and organizations.
+
+* Protocols: Uses TCP/IP, HTTP, FTP, SMTP, and others for communication.
+
+* Resources: Websites, email, cloud services, streaming platforms, online apps.
+
+### 2. INTRANET - 
+An Intranet is a private network that uses Internet technologies (like web browsers and TCP/IP protocols) but is accessible only to authorized users within an organization. It’s designed for internal communication, collaboration, and resource sharing.
+
+#### Key Features
+* Restricted Access: Only employees or members of the organization can log in.
+
+* Ownership: Controlled and maintained by the organization itself.
+
+* Uses Internet Tech: Works like the Internet but behind security walls (firewalls, authentication).
+
+* Purpose: Enhance efficiency, communication, and data security inside the organization.
+
+# NIC
+NIC stands for Network Interface Card (also called Network Interface Controller or Network Adapter).
+It’s a hardware component — either a physical card or a built-in chip — that allows a computer or other device to connect to a network (like LAN, MAN, WAN, or the Internet).
+
+#### Key Functions
+* Physical Connection: Connects the device to the network via cable (Ethernet) or wirelessly (Wi-Fi).
+
+* Data Conversion: Converts data into electrical signals (wired) or radio signals (wireless) and vice versa.
+
+* Unique Identification: Each NIC has a MAC address that uniquely identifies it on a network.
+
+* Communication Management: Handles sending and receiving of data packets.
+
+#### Types
+1. Ethernet NIC – Uses cables (RJ-45 connectors).
+
+2. Wireless NIC – Uses Wi-Fi to connect.
+
+3. Fiber Optic NIC – For high-speed optical fiber networks.
+
+## SMART NIC - 
+A Smart NIC (Smart Network Interface Card) is an advanced version of a traditional NIC that not only connects a device to a network but also offloads certain networking and security tasks from the CPU to its own built-in processors.
+
+It’s like a network card with a brain — it can process data, run security checks, and handle virtualization right on the card, without bothering the main system CPU.
+
+#### Common Uses
+* Cloud Data Centers (Amazon, Google Cloud, Microsoft Azure).
+
+* High-Frequency Trading Systems (where every microsecond matters).
+
+* AI & Machine Learning clusters (to handle huge data flows).
+
+* Telecom & 5G networks (for efficient data routing).
+
+### Some technologies used with Smart-NIC are:
+
+#### DPDK - It stands for Data Plane Development Kit.
+
+It’s an open-source set of libraries and drivers designed to make packet processing extremely fast — much faster than using the standard Linux kernel networking stack.
+
+##### Together:
+DPDK ensures packets move into and out of the Smart NIC at maximum speed without kernel slowdowns.
+Smart NIC handles heavy-lifting tasks (firewall, encryption, VXLAN tunneling, routing) before passing data to the CPU.
+
+#### SR-IOV - IT stands for Single Root I/O Virtualization.
+It’s a technology that allows a single physical PCIe device (like a NIC, GPU, or storage adapter) to appear as multiple separate virtual devices to the system.
+
+##### Together:
+SR-IOV splits a single NIC into multiple Virtual Functions (VFs) so VMs/containers can directly access NIC hardware without going through the hypervisor, reducing latency and CPU usage.
+
+# OSI LAYERS
+
+OSI (Open Systems Interconnection) Model – A 7-layer framework that standardizes how computers communicate over a network.
+
+1. Physical – Sends raw bits over cables/wireless.
+
+2. Data Link – Handles MAC addresses, frames, and error detection.
+
+3. Network – Routes data using IP addresses.
+
+4. Transport – Ensures correct delivery (TCP/UDP).
+
+5. Session – Opens, manages, and closes sessions.
+
+6. Presentation – Translates, encrypts, and compresses data.
+
+7. Application – Interfaces directly with user applications (web, email, etc.).
+
+# USER/KERNEL SPACE
+
+### USER SPACE - 
+The part of a computer’s memory where non-privileged code (regular applications) runs.
+
+* Runs applications like browsers, word processors, games, etc.
+
+* Has limited permissions — can’t directly access hardware or critical OS resources.
+
+* Must request hardware or OS services via system calls to the kernel.
+
+* Each process in user space runs in its own isolated memory, so one crashing usually doesn’t crash others or the OS.
+
+#### EXAMPLES:
+* Running Chrome
+* Python script
+* Zoom call
+
+### KERNEL SPACE -
+Kernel Space is the part of memory where the operating system core runs with full hardware access, managing processes, memory, and devices. It’s highly privileged — if it crashes, the whole system can fail.
+
+* Has full access to hardware and system resources.
+
+* Handles process management, memory management, device control, and system security.
+
+* Executes privileged instructions that user space programs cannot.
+
+* A crash here can bring down the entire system.
+
+#### EXAMPLES:
+* Device drivers (e.g., graphics driver, network driver)
+* System call handlers (bridge between apps and hardware)
+* Process scheduler (decides which process runs next)
+* Memory manager (allocates RAM, handles virtual memory)
+* File system management (ext4, NTFS, FAT32, etc.)
+
